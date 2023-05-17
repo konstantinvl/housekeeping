@@ -3,7 +3,6 @@ import path from 'path';
 import express from 'express';
 import mysql from 'mysql2';
 import { DataTypes, Sequelize } from 'sequelize';
-import bcrypt from 'bcrypt';
 import cors from 'cors';
 import { UserModel } from './userlist/user';
 import TelegramBot from 'node-telegram-bot-api';
@@ -15,10 +14,10 @@ app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// const indexPath = path.join(__dirname, '../reactApp/app/');
+const indexPath = path.join(__dirname, '../reactApp/app/');
 const PORT = process.env.PORT || 4050;
 
-// app.use('/', express.static(indexPath));
+app.use('/', express.static(indexPath));
 
 // app.use('/api/userlist', userlist);
 
