@@ -32,5 +32,4 @@ node_modules/
 # Build results
 dist
 
-src/userlist
 reactApp
