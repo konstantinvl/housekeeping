@@ -159,7 +159,7 @@ const token = '6108338639:AAFxYUnEnUg7YPuTqOzjISkWT0hYHPzhZNA';
 
 const bot = new TelegramBot(token, { polling: true });
 
-bot.on('message', (msg) => {
+bot.on('message', (msg: TelegramBot.Message) => {
   const chatId = msg.chat.id;
 
   // send a message to the chat acknowledging receipt of their message
