@@ -6,7 +6,7 @@ import { DataTypes, Sequelize } from 'sequelize';
 import bcrypt from 'bcrypt';
 import cors from 'cors';
 import { UserModel } from './userlist/user';
-import bot from './bot/bot';
+import TelegramBot from 'node-telegram-bot-api';
 
 // import userlist from './userlist/router';
 
@@ -155,3 +155,14 @@ export const User = sequelize.define<UserModel>(
 User.findAll({
   attributes: ['chatId'],
 }).then((res) => console.log('users', res));
+
+const token = '6108338639:AAFxYUnEnUg7YPuTqOzjISkWT0hYHPzhZNA';
+
+const bot = new TelegramBot(token, { polling: true });
+
+bot.on('message', (msg) => {
+  const chatId = msg.chat.id;
+
+  // send a message to the chat acknowledging receipt of their message
+  bot.sendMessage(chatId, 'Received your message');
+});
