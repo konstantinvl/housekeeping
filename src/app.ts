@@ -3,8 +3,10 @@ import path from 'path';
 import express from 'express';
 import mysql from 'mysql2';
 import { DataTypes, Sequelize } from 'sequelize';
+// @ts-ignore
 import cors from 'cors';
 import { UserModel } from './userlist/user';
+// @ts-ignore
 import TelegramBot from 'node-telegram-bot-api';
 
 // import userlist from './userlist/router';
